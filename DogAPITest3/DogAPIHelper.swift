@@ -18,24 +18,6 @@ struct DogAPIHelper{
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
     }()
-//    static func fetch(url: String, endpoint: String, callback: @escaping (DogFetchResult) -> Void){
-//        guard
-//            let url = URL(string: url)
-//        else{return}
-//        let request = URLRequest(url: url)
-//        let task = session.dataTask(with: request){ data, response, error in
-//            if let data = data {
-//                //print (data)
-//                callback(.success(data))
-//                
-//            }else if let error = error {
-//                callback(.failure(error))
-//            }
-//        }
-//        task.resume()
-//    }
-    //end of fetch DogFetchResult
-
   
     //fetch dog list:
     static func fetchdog(callback: @escaping ([String]) -> Void){
@@ -59,10 +41,8 @@ struct DogAPIHelper{
                        let item = dogType[i]
                         newArray.append(item)
                     }
-//                    print(newArray[1])
                     OperationQueue.main.addOperation {
                         callback(newArray)
-                        
                     }
                 } catch let e {
                     print("error \(e)")
@@ -75,6 +55,7 @@ struct DogAPIHelper{
         }
         task.resume()
     }//end of fetch dog list
+    
     static func fetchImage(url: String, callback: @escaping ([String]) -> Void){
         
         guard

@@ -18,12 +18,10 @@ class TableViewController: UITableViewController {
         DogAPIHelper.fetchdog{newArray in
             self.dog = newArray
             self.tableView.reloadData()
-            
        }
         
      }
     
-
     
     // MARK: - Table view data source
 
@@ -34,7 +32,6 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //return dog.count
         return dog.count
     }
 
@@ -53,17 +50,19 @@ class TableViewController: UITableViewController {
                 let List = newArray[indexPath.row]
                 let url: String = URL + List + "/images"
                 DogAPIHelper.fetchImage(url: url ) {dogImage in
+                    for _ in 0...100000{
+                        continue
+                    }
                     do{
+                        cell.spinner.isHidden = true
                         try
                         cell.DogBreedImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage[0])! as URL) as Data)
                     }catch let error{
                         print(error)
                     }
-                    //cell.DogBreedName.text = dogImage[0]
-                    //print(dogImage[0])
+   
                }
         }
-        //cell.DogBreedName.text = imageArray[indexPath.row]
         return cell
     }
     
@@ -116,5 +115,4 @@ class TableViewController: UITableViewController {
         dst.dogName = selectedDog
     }
     
-
 }

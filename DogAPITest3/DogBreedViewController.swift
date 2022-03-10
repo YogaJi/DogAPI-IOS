@@ -16,13 +16,17 @@ class DogBreedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //spinner:
+        spinner.startAnimating()
+        
         showURL.text = dogName
         let url: String = URL + dogName + "/images"
             DogAPIHelper.fetchImage(url: url ) {dogImage in
                 do{
                     try
                     self.dogMainImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage[0])! as URL) as Data)
-                    print(dogImage[0])
+                    self.spinner.isHidden = true
                 }catch let error{
                     print(error)
                 }
@@ -31,12 +35,18 @@ class DogBreedViewController: UIViewController {
     @IBAction func NewDogImageButton(_ sender: Any) {
         let url: String = URL + dogName + "/images"
             DogAPIHelper.fetchImage(url: url ) {dogImage in
-                do{
-                    try
-                    self.dogMainImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage.randomElement()!)! as URL) as Data)
-                }catch let error{
-                    print(error)
+                
+                for _ in 0...1000000{
+                    continue
                 }
+                         
+                do{
+                try
+                   self.dogMainImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage.randomElement()!)! as URL) as Data)
+  
+               }catch let error{
+                   print(error)
+               }
           }
     }
 
