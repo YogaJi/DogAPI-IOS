@@ -6,7 +6,7 @@
 ////  A00246407
 
 import Foundation
-class Dog{
+class Dog: Codable{
     var name: String
     init(name: String){
         self.name = name

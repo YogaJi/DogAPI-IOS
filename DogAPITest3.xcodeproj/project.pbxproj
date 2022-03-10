@@ -17,6 +17,7 @@
 		185225A727B0D5170073228A /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185225A627B0D5170073228A /* Dog.swift */; };
 		1887B9E927D7F4C400619165 /* DogBreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887B9E827D7F4C400619165 /* DogBreedViewController.swift */; };
 		1887B9EB27D7F51900619165 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887B9EA27D7F51900619165 /* DogTableViewCell.swift */; };
+		1887B9ED27D9514300619165 /* DogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887B9EC27D9514300619165 /* DogImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		185225A627B0D5170073228A /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		1887B9E827D7F4C400619165 /* DogBreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedViewController.swift; sourceTree = "<group>"; };
 		1887B9EA27D7F51900619165 /* DogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogTableViewCell.swift; sourceTree = "<group>"; };
+		1887B9EC27D9514300619165 /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +68,12 @@
 			children = (
 				1852258C27B0C1AB0073228A /* AppDelegate.swift */,
 				1852258E27B0C1AB0073228A /* SceneDelegate.swift */,
-				185225A027B0C1BA0073228A /* TableViewController.swift */,
 				1887B9E827D7F4C400619165 /* DogBreedViewController.swift */,
 				1887B9EA27D7F51900619165 /* DogTableViewCell.swift */,
+				185225A027B0C1BA0073228A /* TableViewController.swift */,
 				185225A227B0CF230073228A /* DogAPIHelper.swift */,
 				185225A627B0D5170073228A /* Dog.swift */,
+				1887B9EC27D9514300619165 /* DogImage.swift */,
 				1852259227B0C1AB0073228A /* Main.storyboard */,
 				1852259527B0C1AC0073228A /* Assets.xcassets */,
 				1852259727B0C1AC0073228A /* LaunchScreen.storyboard */,
@@ -156,6 +159,7 @@
 				1887B9E927D7F4C400619165 /* DogBreedViewController.swift in Sources */,
 				185225A327B0CF230073228A /* DogAPIHelper.swift in Sources */,
 				1852258F27B0C1AB0073228A /* SceneDelegate.swift in Sources */,
+				1887B9ED27D9514300619165 /* DogImage.swift in Sources */,
 				185225A127B0C1BA0073228A /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

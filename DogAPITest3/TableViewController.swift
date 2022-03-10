@@ -9,16 +9,20 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var newArray = [String]()
+    var dog = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 44.0
         //fetch
-        DogAPIHelper.fetch{newArray in
-            self.newArray = newArray
+        DogAPIHelper.fetchdog{newArray in
+            self.dog = newArray
             self.tableView.reloadData()
-        }
-    }
+            
+       }
+        
+     }
+    
 
     
     // MARK: - Table view data source
@@ -30,17 +34,36 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return newArray.count
+        //return dog.count
+        return dog.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dog", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dog", for: indexPath) as!
+        DogTableViewCell
+        //let dog = newArray[indexPath.row]
+        //cell.textLabel!.text = dog
         // Configure the cell...
 
-        let dog = newArray[indexPath.row]
-        cell.textLabel!.text = dog
+        cell.DogBreedName.text = dog[indexPath.row]
+        DogAPIHelper.fetchdog{newArray in
+            let URL: String = "https://dog.ceo/api/breed/"
+                //print(newArray)
+                let List = newArray[indexPath.row]
+                let url: String = URL + List + "/images"
+                DogAPIHelper.fetchImage(url: url ) {dogImage in
+                    do{
+                        try
+                        cell.DogBreedImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage[0])! as URL) as Data)
+                    }catch let error{
+                        print(error)
+                    }
+                    //cell.DogBreedName.text = dogImage[0]
+                    //print(dogImage[0])
+               }
+        }
+        //cell.DogBreedName.text = imageArray[indexPath.row]
         return cell
     }
     
