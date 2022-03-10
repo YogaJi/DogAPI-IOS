@@ -8,7 +8,8 @@
 import UIKit
 
 class DogTableViewCell: UITableViewCell {
-
+    
+    
     @IBOutlet weak var DogBreedName: UILabel!
     @IBOutlet weak var DogBreedImage: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!

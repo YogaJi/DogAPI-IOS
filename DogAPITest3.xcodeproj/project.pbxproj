@@ -68,12 +68,12 @@
 			children = (
 				1852258C27B0C1AB0073228A /* AppDelegate.swift */,
 				1852258E27B0C1AB0073228A /* SceneDelegate.swift */,
-				1887B9E827D7F4C400619165 /* DogBreedViewController.swift */,
 				1887B9EA27D7F51900619165 /* DogTableViewCell.swift */,
 				185225A027B0C1BA0073228A /* TableViewController.swift */,
 				185225A227B0CF230073228A /* DogAPIHelper.swift */,
 				185225A627B0D5170073228A /* Dog.swift */,
 				1887B9EC27D9514300619165 /* DogImage.swift */,
+				1887B9E827D7F4C400619165 /* DogBreedViewController.swift */,
 				1852259227B0C1AB0073228A /* Main.storyboard */,
 				1852259527B0C1AC0073228A /* Assets.xcassets */,
 				1852259727B0C1AC0073228A /* LaunchScreen.storyboard */,

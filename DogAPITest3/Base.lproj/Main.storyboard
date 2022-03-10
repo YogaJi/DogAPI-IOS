@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M1I-LX-VOy">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <navigationController id="M1I-LX-VOy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zcn-cH-9ab">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -29,31 +29,31 @@
             <objects>
                 <tableViewController id="oUf-m0-mal" customClass="TableViewController" customModule="DogAPITest3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="e8s-Ey-Nw9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dog" id="V9y-Fw-JJU" customClass="DogTableViewCell" customModule="DogAPITest3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V9y-Fw-JJU" id="BoU-Fe-IyC">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="at6-X3-M1x">
-                                            <rect key="frame" x="352" y="0.0" width="52" height="43.5"/>
+                                            <rect key="frame" x="313" y="0.0" width="52" height="43.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="52" id="LrT-fe-7Vj"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-tm-Lst">
-                                            <rect key="frame" x="30" y="16" width="26.5" height="12"/>
+                                            <rect key="frame" x="26" y="16" width="26.5" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GSw-K4-dO7">
-                                            <rect key="frame" x="368" y="12" width="20" height="20"/>
+                                            <rect key="frame" x="329" y="12" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
                                     <constraints>
@@ -91,48 +91,62 @@
             <objects>
                 <viewController id="wPI-CJ-dIb" customClass="DogBreedViewController" customModule="DogAPITest3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yRD-CW-2d8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hx0-fs-G1g">
-                                <rect key="frame" x="72" y="199" width="270" height="253"/>
+                                <rect key="frame" x="31" y="163" width="313" height="247"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="247" id="vHQ-IH-sWp"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cth-JK-l4S">
-                                <rect key="frame" x="246" y="493" width="96" height="31"/>
+                                <rect key="frame" x="248" y="493" width="96" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="New Image"/>
                                 <connections>
                                     <action selector="NewDogImageButton:" destination="wPI-CJ-dIb" eventType="touchUpInside" id="TCI-eK-XAm"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="HBU-wH-bM5">
-                                <rect key="frame" x="189" y="305" width="37" height="40"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="HBU-wH-bM5">
+                                <rect key="frame" x="169" y="259" width="37" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="VRa-bb-Ot6"/>
+                                </constraints>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ7-YT-Ax4">
+                                <rect key="frame" x="31" y="498" width="41.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5aB-UW-4C1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Hx0-fs-G1g" firstAttribute="centerX" secondItem="yRD-CW-2d8" secondAttribute="centerX" id="9SA-3n-mhd"/>
-                            <constraint firstItem="HBU-wH-bM5" firstAttribute="centerX" secondItem="Hx0-fs-G1g" secondAttribute="centerX" id="AEA-ZA-5IV"/>
-                            <constraint firstItem="HBU-wH-bM5" firstAttribute="centerY" secondItem="Hx0-fs-G1g" secondAttribute="centerY" id="Cpl-0M-kof"/>
-                            <constraint firstItem="5aB-UW-4C1" firstAttribute="trailing" secondItem="cth-JK-l4S" secondAttribute="trailing" constant="72" id="Dkd-qC-REZ"/>
-                            <constraint firstItem="cth-JK-l4S" firstAttribute="leading" secondItem="5aB-UW-4C1" secondAttribute="leading" constant="246" id="INc-7A-xOg"/>
-                            <constraint firstItem="5aB-UW-4C1" firstAttribute="bottom" secondItem="cth-JK-l4S" secondAttribute="bottom" constant="338" id="PlW-Qc-Ky0"/>
-                            <constraint firstItem="Hx0-fs-G1g" firstAttribute="top" secondItem="5aB-UW-4C1" secondAttribute="top" constant="111" id="YrH-9g-e0w"/>
-                            <constraint firstItem="Hx0-fs-G1g" firstAttribute="centerX" secondItem="5aB-UW-4C1" secondAttribute="centerX" id="gat-om-hxJ"/>
-                            <constraint firstItem="Hx0-fs-G1g" firstAttribute="leading" secondItem="5aB-UW-4C1" secondAttribute="leading" constant="72" id="uaS-Zg-Ij1"/>
-                            <constraint firstItem="cth-JK-l4S" firstAttribute="top" secondItem="Hx0-fs-G1g" secondAttribute="bottom" constant="41" id="ubw-Gv-5iT"/>
+                            <constraint firstItem="HBU-wH-bM5" firstAttribute="centerX" secondItem="yRD-CW-2d8" secondAttribute="centerX" id="1bX-uq-CvP"/>
+                            <constraint firstItem="Hx0-fs-G1g" firstAttribute="centerX" secondItem="HBU-wH-bM5" secondAttribute="centerX" id="74A-na-VFF"/>
+                            <constraint firstItem="5aB-UW-4C1" firstAttribute="bottom" secondItem="Hx0-fs-G1g" secondAttribute="bottom" constant="257" id="7t6-Zr-q0j"/>
+                            <constraint firstItem="vJ7-YT-Ax4" firstAttribute="leading" secondItem="5aB-UW-4C1" secondAttribute="leading" constant="31" id="CmY-en-WdP"/>
+                            <constraint firstItem="5aB-UW-4C1" firstAttribute="trailing" secondItem="cth-JK-l4S" secondAttribute="trailing" constant="31" id="UPt-fp-2xo"/>
+                            <constraint firstItem="vJ7-YT-Ax4" firstAttribute="top" secondItem="Hx0-fs-G1g" secondAttribute="bottom" constant="88" id="VWR-Jl-Tdr"/>
+                            <constraint firstItem="vJ7-YT-Ax4" firstAttribute="centerY" secondItem="cth-JK-l4S" secondAttribute="centerY" id="W2C-2v-tNw"/>
+                            <constraint firstItem="Hx0-fs-G1g" firstAttribute="centerY" secondItem="HBU-wH-bM5" secondAttribute="centerY" id="boD-bA-x7l"/>
+                            <constraint firstItem="cth-JK-l4S" firstAttribute="top" secondItem="Hx0-fs-G1g" secondAttribute="bottom" constant="83" id="iF2-B4-K2f"/>
+                            <constraint firstItem="Hx0-fs-G1g" firstAttribute="trailing" secondItem="cth-JK-l4S" secondAttribute="trailing" id="tKR-IR-YWM"/>
+                            <constraint firstItem="5aB-UW-4C1" firstAttribute="bottom" secondItem="HBU-wH-bM5" secondAttribute="bottom" constant="353" id="xog-6w-zIO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R5F-O9-fkD"/>
                     <connections>
-                        <outlet property="DogBreedImage" destination="Hx0-fs-G1g" id="8Cd-dz-TgX"/>
+                        <outlet property="dogMainImage" destination="Hx0-fs-G1g" id="Gjv-qS-Fme"/>
+                        <outlet property="showURL" destination="vJ7-YT-Ax4" id="3OT-Vd-YtN"/>
                         <outlet property="spinner" destination="HBU-wH-bM5" id="1eo-nc-ZVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN6-I0-OZv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-281.15942028985512" y="146.65178571428569"/>
+            <point key="canvasLocation" x="-284" y="145.27736131934034"/>
         </scene>
     </scenes>
     <resources>

@@ -8,27 +8,37 @@
 import UIKit
 
 class DogBreedViewController: UIViewController {
-
+    var dogName: String!
+    let URL: String = "https://dog.ceo/api/breed/"
+    @IBOutlet weak var dogMainImage: UIImageView!
+    @IBOutlet weak var showURL: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var DogBreedImage: UIImageView!
     
-    @IBAction func NewDogImageButton(_ sender: Any) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        showURL.text = dogName
+        let url: String = URL + dogName + "/images"
+            DogAPIHelper.fetchImage(url: url ) {dogImage in
+                do{
+                    try
+                    self.dogMainImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage[0])! as URL) as Data)
+                    print(dogImage[0])
+                }catch let error{
+                    print(error)
+                }
+          }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func NewDogImageButton(_ sender: Any) {
+        let url: String = URL + dogName + "/images"
+            DogAPIHelper.fetchImage(url: url ) {dogImage in
+                do{
+                    try
+                    self.dogMainImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage.randomElement()!)! as URL) as Data)
+                }catch let error{
+                    print(error)
+                }
+          }
     }
-    */
+
 
 }
