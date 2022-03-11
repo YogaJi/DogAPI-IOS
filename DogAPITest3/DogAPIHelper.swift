@@ -10,10 +10,8 @@ import UIKit
 
 struct DogAPIHelper{
     
-//    private static let baseURL : String = "https://dog.ceo/api/breeds/list"
     private static let baseURL : String = "https://dog.ceo/api/breeds/"
-    //private static let imageURL: String = "https://dog.ceo/api/breed/hound/images/random"
-    private static let imageURL: String  = ""
+
     private static let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
@@ -24,6 +22,7 @@ struct DogAPIHelper{
         guard
             let url = URL(string: baseURL + "list")
         else{return}
+        //new array to receive data from API
         var newArray = [String]()
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) {
@@ -36,7 +35,7 @@ struct DogAPIHelper{
                         let jsonDictionary = jsonObject as? [AnyHashable: Any],
                         let dogType = jsonDictionary["message"] as? [String]
                     else {preconditionFailure("could not parse JSOn data")}
-
+                    //receive data from jsonDictionary
                     for i in 0..<dogType.count {
                        let item = dogType[i]
                         newArray.append(item)
@@ -54,11 +53,12 @@ struct DogAPIHelper{
             }
         }
         task.resume()
-    }//end of fetch dog list
-    
+    }
+    //fetch dog image
     static func fetchImage(url: String, callback: @escaping ([String]) -> Void){
         
         guard
+            //set up dog image url later with dog breed from previous API result
             let url = URL(string: url)
         else{return}
         
@@ -87,5 +87,5 @@ struct DogAPIHelper{
             }
         }
         task.resume()
-    }//end of fetch dog list
+    }
 }

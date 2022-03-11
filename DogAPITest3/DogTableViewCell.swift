@@ -9,7 +9,7 @@ import UIKit
 
 class DogTableViewCell: UITableViewCell {
     
-    
+    //set tableview cell label, image and spinner
     @IBOutlet weak var DogBreedName: UILabel!
     @IBOutlet weak var DogBreedImage: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -20,6 +20,7 @@ class DogTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        //set spinner animation
         spinner.startAnimating()
         // Configure the view for the selected state
     }

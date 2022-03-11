@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="oUf-m0-mal" kind="relationship" relationship="rootViewController" id="nde-hj-KUw"/>
+                        <segue destination="oUf-m0-mal" kind="relationship" relationship="rootViewController" id="P5o-BE-1du"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4XJ-ep-oCr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -27,7 +27,7 @@
         <!--Dogs List-->
         <scene sceneID="vOf-L1-ljQ">
             <objects>
-                <tableViewController id="oUf-m0-mal" customClass="TableViewController" customModule="DogAPITest3" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="oUf-m0-mal" customClass="DogTableViewController" customModule="DogAPITest3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="e8s-Ey-Nw9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,9 +47,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSk-tm-Lst">
-                                            <rect key="frame" x="26" y="16" width="26.5" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="26" y="11.5" width="41.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.1831105026" green="0.1831105026" blue="0.1831105026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="GSw-K4-dO7">
@@ -100,10 +100,13 @@
                                     <constraint firstAttribute="height" constant="247" id="vHQ-IH-sWp"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cth-JK-l4S">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cth-JK-l4S">
                                 <rect key="frame" x="248" y="493" width="96" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="New Image"/>
+                                <buttonConfiguration key="configuration" style="filled" title="New Image">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="NewDogImageButton:" destination="wPI-CJ-dIb" eventType="touchUpInside" id="TCI-eK-XAm"/>
                                 </connections>
@@ -114,10 +117,10 @@
                                     <constraint firstAttribute="height" constant="55" id="VRa-bb-Ot6"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ7-YT-Ax4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJ7-YT-Ax4">
                                 <rect key="frame" x="31" y="498" width="41.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" red="0.1831105026" green="0.1831105026" blue="0.1831105026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -128,6 +131,7 @@
                             <constraint firstItem="Hx0-fs-G1g" firstAttribute="centerX" secondItem="HBU-wH-bM5" secondAttribute="centerX" id="74A-na-VFF"/>
                             <constraint firstItem="5aB-UW-4C1" firstAttribute="bottom" secondItem="Hx0-fs-G1g" secondAttribute="bottom" constant="257" id="7t6-Zr-q0j"/>
                             <constraint firstItem="vJ7-YT-Ax4" firstAttribute="leading" secondItem="5aB-UW-4C1" secondAttribute="leading" constant="31" id="CmY-en-WdP"/>
+                            <constraint firstItem="cth-JK-l4S" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vJ7-YT-Ax4" secondAttribute="trailing" constant="8" symbolic="YES" id="I74-7s-gYr"/>
                             <constraint firstItem="5aB-UW-4C1" firstAttribute="trailing" secondItem="cth-JK-l4S" secondAttribute="trailing" constant="31" id="UPt-fp-2xo"/>
                             <constraint firstItem="vJ7-YT-Ax4" firstAttribute="top" secondItem="Hx0-fs-G1g" secondAttribute="bottom" constant="88" id="VWR-Jl-Tdr"/>
                             <constraint firstItem="vJ7-YT-Ax4" firstAttribute="centerY" secondItem="cth-JK-l4S" secondAttribute="centerY" id="W2C-2v-tNw"/>
@@ -139,8 +143,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="R5F-O9-fkD"/>
                     <connections>
+                        <outlet property="dogBreed" destination="vJ7-YT-Ax4" id="3JM-qL-RQJ"/>
                         <outlet property="dogMainImage" destination="Hx0-fs-G1g" id="Gjv-qS-Fme"/>
-                        <outlet property="showURL" destination="vJ7-YT-Ax4" id="3OT-Vd-YtN"/>
                         <outlet property="spinner" destination="HBU-wH-bM5" id="1eo-nc-ZVP"/>
                     </connections>
                 </viewController>
@@ -149,9 +153,13 @@
             <point key="canvasLocation" x="-284" y="145.27736131934034"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.1831105026" green="0.1831105026" blue="0.1831105026" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

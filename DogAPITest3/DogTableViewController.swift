@@ -7,22 +7,22 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class DogTableViewController: UITableViewController {
     
     var dog = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set table row height
         self.tableView.rowHeight = 44.0
-        //fetch
+        //fetch dog list
         DogAPIHelper.fetchdog{newArray in
             self.dog = newArray
             self.tableView.reloadData()
        }
         
      }
-    
-    
+      
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,26 +35,27 @@ class TableViewController: UITableViewController {
         return dog.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dog", for: indexPath) as!
         DogTableViewCell
-        //let dog = newArray[indexPath.row]
-        //cell.textLabel!.text = dog
-        // Configure the cell...
-
+        
+        //set cell's label with dog breed
         cell.DogBreedName.text = dog[indexPath.row]
-        DogAPIHelper.fetchdog{newArray in
+        
+        //fetch dog name
+        DogAPIHelper.fetchdog { newArray in
             let URL: String = "https://dog.ceo/api/breed/"
-                //print(newArray)
                 let List = newArray[indexPath.row]
                 let url: String = URL + List + "/images"
+                //fetch dog image with dog breed
                 DogAPIHelper.fetchImage(url: url ) {dogImage in
+                    //load pause
                     for _ in 0...100000{
                         continue
                     }
                     do{
                         cell.spinner.isHidden = true
+                        //transfer image url to UIImage and set cell's image
                         try
                         cell.DogBreedImage.image = UIImage(data: NSData(contentsOf: NSURL(string: dogImage[0])! as URL) as Data)
                     }catch let error{
@@ -109,9 +110,12 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        //set cell as index
         let index = tableView.indexPathForSelectedRow!.row
+        //set selected dog name value (string)
         let selectedDog = dog[index].self
         let dst = segue.destination as! DogBreedViewController
+        //set dog breed view controller's variable dogName as selected dog name
         dst.dogName = selectedDog
     }
     
